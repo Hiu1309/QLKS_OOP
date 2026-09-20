@@ -1,15 +1,14 @@
 package model;
 
-public class KhachHang extends Nguoi {
+public class KhachHang extends Nguoi {    
     private String phone;
     private static int soLuong=0;
 
     public KhachHang(){}
 
-    public KhachHang(String id, String name, String phone){
-        super(id,name);
-        this.phone=phone;
-        soLuong++;
+    public KhachHang(String cccd, String name, String phone){        
+        super(cccd,name);
+        this.phone=phone;                
     }
 
     public String getPhone(){
@@ -21,9 +20,17 @@ public class KhachHang extends Nguoi {
     }
 
     @Override
-    public void hienThiThongTin(){
+    public void hienThiThongTin(){        
         super.hienThiThongTin();
-        System.out.println("Số điện thoại khách hàng: "+phone);
+        System.out.print("|| Số điện thoại khách hàng: "+phone);
+    }
+
+    public static void tangSoLuong(){
+        soLuong++;
+    }
+
+    public static void giamSoLuong(){
+        soLuong--;
     }
 
     public static int demSoLuong(){
