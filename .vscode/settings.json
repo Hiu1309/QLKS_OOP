@@ -1,0 +1,20 @@
+{
+    "java.project.encoding": "UTF-8",
+    "java.debug.settings.vmArgs": "-Dfile.encoding=UTF-8",
+    "terminal.integrated.env.windows": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        "JAVA_TOOL_OPTIONS": "-Dfile.encoding=UTF-8"
+    },
+    "terminal.integrated.profiles.windows": {
+        "PowerShell UTF-8": {
+            "source": "PowerShell",
+            "args": [
+                "-NoExit",
+                "-Command",
+                "[Console]::InputEncoding = [System.Text.UTF8Encoding]::new(); [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell UTF-8"
+}
