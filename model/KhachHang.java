@@ -1,6 +1,7 @@
 package model;
 
 public class KhachHang extends Nguoi {    
+    private String idKH;
     private String phone;
     private static int soLuong=0;
 
@@ -8,7 +9,13 @@ public class KhachHang extends Nguoi {
 
     public KhachHang(String cccd, String name, String phone){        
         super(cccd,name);
-        this.phone=phone;                
+        this.phone=phone;      
+        soLuong++;
+        idKH=String.format("KH%03d", soLuong);          
+    }
+
+    public String getIdKH(){
+        return idKH;
     }
 
     public String getPhone(){
@@ -21,12 +28,9 @@ public class KhachHang extends Nguoi {
 
     @Override
     public void hienThiThongTin(){        
+        System.out.print("Mã khách hàng: "+idKH+" || ");
         super.hienThiThongTin();
-        System.out.print("|| Số điện thoại khách hàng: "+phone);
-    }
-
-    public static void tangSoLuong(){
-        soLuong++;
+        System.out.println(" || Số điện thoại khách hàng: "+phone);
     }
 
     public static void giamSoLuong(){

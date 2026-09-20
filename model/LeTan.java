@@ -2,6 +2,12 @@ package model;
 
 public class LeTan extends NhanVien {
 
+    public LeTan(){}
+
+    public LeTan(String cccd, String name, float luong){
+        super(cccd, name, luong);
+    }
+
     public void tiepNhanKhach(){
         System.out.println("Lễ tân đang tiếp nhận khách");
     }
@@ -17,6 +23,6 @@ public class LeTan extends NhanVien {
     @Override
     public void hienThiThongTin(){
         super.hienThiThongTin();
-        System.out.println("Chức vụ: Lễ tân");
+        System.out.println(" || Chức vụ: Lễ tân");
     }
 }

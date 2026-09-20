@@ -6,10 +6,9 @@ public class NhanVien extends Nguoi{
 
     public NhanVien(){}
 
-    public NhanVien(String id, String name, float luong){
-        super(id,name);
+    public NhanVien(String cccd, String name, float luong){
+        super(cccd,name);
         this.luong=luong;
-        soLuong++;
     }
 
     public float getLuong(){
@@ -23,7 +22,15 @@ public class NhanVien extends Nguoi{
     @Override
     public void hienThiThongTin(){
         super.hienThiThongTin();
-        System.out.println("Lương của nhân viên: "+luong);
+        System.out.print(" || Lương của nhân viên: "+luong);
+    }
+    
+    public static void tangSoLuong(){
+        soLuong++;
+    }
+
+    public static void giamSoLuong(){
+        soLuong--;
     }
 
     public static int demSoLuong(){

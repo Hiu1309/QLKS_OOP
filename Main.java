@@ -1,21 +1,24 @@
-import manager.QuanLyKhachHang;
-import model.KhachHang;
+import manager.*;
+import model.*;
 import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-        QuanLyKhachHang dsKH = new QuanLyKhachHang();
         Scanner sc = new Scanner(System.in);
-        KhachHang kh = new KhachHang("079", "hiu", "010");
-        dsKH.themKhachHang(kh,sc);
+
+        QuanLyKhachHang dsKH = new QuanLyKhachHang();
+        dsKH.themKhachHang(sc);
+        dsKH.themKhachHang(sc);
         dsKH.hienThiDanhSachKhachHang();
-        dsKH.suaThongTinKhachHang(kh.getCCCD(), sc);
+        dsKH.themKhachHang(sc);
+        System.out.print("Nhập mã kh muốn sửa tt: ");
+        String maKH1 = sc.nextLine();
+        dsKH.suaThongTinKhachHang(maKH1, sc);
         dsKH.hienThiDanhSachKhachHang();
-        dsKH.xoaKhachHang(kh.getCCCD());
-        KhachHang kh2 = new KhachHang("089", "tai", "0123");
-        dsKH.themKhachHang(kh2,sc);
+        System.out.print("Nhập mã của tk kh muốn xóa: ");
+        String maKH2 = sc.nextLine();
+        dsKH.xoaKhachHang(maKH2);
         dsKH.hienThiDanhSachKhachHang();
-       
-       
+        
     }
 }
