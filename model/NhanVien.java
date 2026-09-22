@@ -1,6 +1,7 @@
 package model;
 
 public class NhanVien extends Nguoi{
+    private String maNV;
     private float luong;
     private static int soLuong=0;
 
@@ -9,8 +10,13 @@ public class NhanVien extends Nguoi{
     public NhanVien(String cccd, String name, float luong){
         super(cccd,name);
         this.luong=luong;
+        soLuong++;
+        maNV=String.format("NV%03d",soLuong);
     }
 
+    public String getMaNV(){
+        return maNV;
+    }
     public float getLuong(){
         return luong;
     }
@@ -21,12 +27,9 @@ public class NhanVien extends Nguoi{
 
     @Override
     public void hienThiThongTin(){
+        System.out.print("Mã nhân viên: "+maNV+" || ")
         super.hienThiThongTin();
         System.out.print(" || Lương của nhân viên: "+luong);
-    }
-    
-    public static void tangSoLuong(){
-        soLuong++;
     }
 
     public static void giamSoLuong(){
